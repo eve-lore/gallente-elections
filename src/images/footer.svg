@@ -1,0 +1,27 @@
+<svg version="1.1"
+     baseProfile="full"
+     viewBox="0 0 2560 250"
+     preserveAspectRatio="none"
+     xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <clipPath id="f-panel-clip">
+            <path d="M60,80 C640,40 1920,40 2500,80 L2530,120 L2480,240 L80,240 L30,120 Z" fill="black" stroke="white" stroke-width="4px"/>
+        </clipPath>
+        <linearGradient id="f-top-gradient">
+            <stop offset="0%" stop-color="white" stop-opacity="0%"/>
+            <stop offset="5%" stop-color="white" stop-opacity="100%"/>
+            <stop offset="95%" stop-color="white" stop-opacity="100%"/>
+            <stop offset="100%" stop-color="white" stop-opacity="0%"/>
+        </linearGradient>
+        <mask id="f-top-bar-fade">
+            <rect width="100%" height="100%" fill="url(#f-top-gradient)"/>
+        </mask>
+    </defs>
+
+    <path id="f-top-bar" d="M0,65 C640,30 1920,30 2560,65" stroke-width="6px" stroke="rgba(200,200,200,0.25)" fill="transparent" mask="url(#f-top-bar-fade)"/>
+
+    <path id="f-panel" d="M60,80 C640,40 1920,40 2500,80 L2530,120 L2480,240 L80,240 L30,120 Z" fill="rgba(0,0,0,0.4)" stroke-width="4px" stroke="rgba(200,200,200,0.3)" />
+    <path class="side-lines" d="M80,240 L65,240 L15,120 L45,80 L60,80" fill="transparent" stroke-width="2px" stroke="rgba(100,100,100,0.3)" />
+    <path class="side-lines" d="M2480,240 L2495,240 L2545,120 L2515,80 L2500,80" fill="transparent" stroke-width="2px" stroke="rgba(100,100,100,0.3)" />
+    <path id="f-big-bar" d="M30,120 C640,80 1920,80,2530,120" stroke-width="12px" stroke="rgba(200,200,200,0.25)" fill="transparent" clip-path="url(#f-panel-clip)" />
+</svg>

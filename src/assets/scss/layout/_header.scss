@@ -1,0 +1,79 @@
+.is-ready #header{
+    .wrapper {
+        > svg {
+            #h-top-bar {
+                stroke-dasharray: 0px 2600px;
+                animation: top-bar-line 1.5s ease-in-out 0s forwards;
+            }
+            #f-big-bar {
+                stroke-dasharray: 0px 2600px;
+                animation: big-bar-line 1.25s ease-in-out 0.25s forwards;
+            }
+            #h-panel,
+            #h-top-filler {
+                opacity: 0;
+                animation: opacity 1.25s ease-in-out 0.75s forwards;
+            }
+            .side-lines {
+                stroke-dasharray: 0px 500px;
+                animation: side-lines 1s ease-in-out 1.5s forwards;
+            }
+            .h-bar-1 {
+                stroke-dasharray: 2560px 2560px;
+                stroke-dashoffset: -2560px;
+                animation: h-bar-1 1.5s ease-in-out 0s forwards;
+            }
+            .h-bar-2 {
+                stroke-dasharray: 0 2560px;
+                animation: h-bar-2 1.5s ease-in-out 0s forwards;
+            }
+        }
+        .container {
+            opacity: 0.85;
+
+            > * {
+                opacity: 0;
+                animation: opacity 1s ease-in-out 2s forwards;
+                @include vendor('user-select', 'none');
+            }
+        }
+    }
+}
+
+@keyframes h-bar-1 {
+    0% {
+        stroke-dashoffset: -2560px;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+@keyframes h-bar-2 {
+    0% {
+        stroke-dasharray: 0 2560px;
+    }
+    100% {
+        stroke-dasharray: 2560px 2560px;
+    }
+}
+
+#header {
+    .container {
+        padding: 4vh 15vw 4.5vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        > h1, > h2, > h3 {
+            margin: 0;
+        }
+    }
+}
+
+@media (orientation: portrait) {
+    #header {
+        .container {
+            padding: 2.5vh 15vw 3vh;
+        }
+    }
+}

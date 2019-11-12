@@ -1,0 +1,20 @@
+#main {
+    .slider {
+        position: absolute !important;
+        top: 0; left: 0;
+        bottom: 0; right: 0;
+        height: auto !important;
+        width: auto !important;
+        
+        .slider-list {
+            position: absolute !important;
+            height: 100% !important;
+            margin: 0 !important;
+            
+            .slider-slide {
+                height: 100% !important;
+                padding: 2vw 5vw 2vh 5vw;
+            }
+        }
+    }
+}

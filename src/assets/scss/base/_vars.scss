@@ -1,0 +1,38 @@
+// Duration.
+$duration: (
+    transition:                 0.25s
+);
+
+// Size.
+$size: (
+    border-radius:				4px,
+    border-width:				1px,
+    element-height:				2rem,
+    element-margin:				1.15rem
+);
+
+// Font.
+$font: (
+    family:						('Source Sans Pro', sans-serif),
+    family-fixed:				('Courier New', monospace),
+    weight:						300,
+    weight-bold:				600,
+    letter-spacing:				0.15rem,
+    letter-spacing-heading:		0.4rem
+);
+
+// Palette.
+$palette: (
+    bg:							#1d2222,
+    bg-alt:						#000000,
+    bg-overlay:					rgba(19,21,25,0.5),
+    fg:							#ffffff,
+    fg-bold:					#ffffff,
+    fg-light:					rgba(255,255,255,0.5),
+    border:						#ffffff,
+    border-bg:					rgba(255,255,255,0.275),
+    border-bg-alt:				rgba(255,255,255,0.5),
+    button-border:              rgba(255,255,255,0.5),
+    button-hover:               rgba(255,255,255,0.5),
+    button-hover-fg:            rgba(10,10,10,0.75)
+);

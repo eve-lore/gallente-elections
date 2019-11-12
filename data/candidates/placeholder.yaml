@@ -1,0 +1,16 @@
+# The filename must end with '.yaml', but is otherwise not important.
+status: "placeholder" # status: "active"  will make sure this item is used in the listing
+name: placeholder # The full display name
+short_name: placeholder # The button display name
+character_id: 0 # The character ID to use (for the image server)
+description: "" # The dossier entry. Will be treated as Markdown content.
+
+#
+# to be more flexible (read: multiple lines), specify description as follows:
+#
+# description: |
+#   line of text
+# <two spaces for empty lines>
+#   another line of text
+#
+#

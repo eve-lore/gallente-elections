@@ -1,0 +1,47 @@
+input[type="submit"], input[type="reset"], input[type="button"], button, .button {
+    background-color: transparent;
+    transform: skew(-20deg); // skew the button, but don't forget to un-skew the text in a child <span>.
+
+    border: _size(border-width) solid _palette(button-border);
+
+    color: _palette(fg-bold);
+    cursor: pointer;
+
+    font-size: 0.75rem;
+    font-weight: _font(weight);
+    height: _size(element-height);
+    letter-spacing: _font(letter-spacing);
+    line-height: _size(element-height);
+    outline: 0;
+    padding: 0 0.5rem 0 (0.5rem + (_font(letter-spacing) * 0.5));
+    text-align: center;
+    text-decoration: none;
+    margin-left: _size(element-margin) * 0.5;
+    margin-right: _size(element-margin) * 0.5;
+    white-space: nowrap;
+
+    @include vendor('transition', 'background-color 0.25s ease-in-out, color 0.25s ease-in-out');
+
+    > span {
+        display: inline-block;
+        transform: skew(20deg);
+    }
+
+    &:hover,
+    &:active,
+    &.active {
+        background-color: _palette(button-hover);
+        color: _palette(button-hover-fg);
+    }
+
+    &.disabled,
+    &:disabled {
+        @include vendor('pointer-events', 'none');
+        cursor: default;
+        opacity: 0.25;
+    }
+}
+
+input[type="submit"], input[type="reset"], input[type="button"], button {
+    line-height: calc(#{_size(element-height)} - 2px);
+}
