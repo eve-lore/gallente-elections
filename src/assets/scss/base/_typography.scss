@@ -39,6 +39,16 @@ a {
     background-repeat: no-repeat;
     background-size: 0% 2px;
 
+    &.button {
+        background-image: none;
+        background-position: initial;
+        background-size: initial;
+
+        &:hover {
+            background-size: initial;
+        }
+    }
+
     &:hover {
         text-decoration: none;
         background-size: 100% 2px;

@@ -35,6 +35,7 @@ module.exports = {
         }
       }
     },
+    `gatsby-plugin-transition-link`,
     'gatsby-plugin-sass',
     //'gatsby-plugin-offline',
     {

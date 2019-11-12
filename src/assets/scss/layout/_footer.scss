@@ -1,30 +1,35 @@
-.is-ready #footer{
-    .wrapper {
-        > svg {
-            #f-top-bar {
-                stroke-dasharray: 0px 2600px;
-                animation: top-bar-line 1.5s ease-in-out 0s forwards;
-            }
-            #f-big-bar {
-                stroke-dasharray: 0px 2600px;
-                animation: big-bar-line 1.25s ease-in-out 0.25s forwards;
-            }
-            #f-panel {
-                opacity: 0;
-                animation: opacity 1.25s ease-in-out 0.75s forwards;
-            }
-            .side-lines {
-                stroke-dasharray: 0px 500px;
-                animation: side-lines 1s ease-in-out 1s forwards;
+.ui-show {
+    &.base-do {
+        #footer .wrapper {
+            > svg {
+                #f-top-bar {
+                    stroke-dasharray: 0px 2600px;
+                    animation: bar-line 0.75s ease-in-out 0s forwards;
+                }
+                #f-big-bar {
+                    stroke-dasharray: 0px 2600px;
+                    animation: bar-line 0.5s ease-in-out 0.25s forwards;
+                }
+                #f-panel {
+                    opacity: 0;
+                    animation: opacity-in 0.5s ease-in-out 0.5s forwards;
+                }
+                .side-lines {
+                    stroke-dasharray: 0px 500px;
+                    animation: side-lines 0.5s ease-in-out 0.5s forwards;
+                }
             }
         }
-        .container{
-            opacity: 0.75;
-
-            > * {
-                opacity: 0;
-                animation: opacity 1s ease-in-out 2s forwards;
-                @include vendor('user-select', 'none');
+    }
+    &.content-show.base-do {
+        #footer .wrapper {
+            .container{
+                opacity: 0.75;
+                > * {
+                    opacity: 0;
+                    animation: opacity-in 1s ease-in-out 0.75s forwards;
+                    @include vendor('user-select', 'none');
+                }
             }
         }
     }

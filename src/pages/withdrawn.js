@@ -7,8 +7,8 @@ export default (props) => {
   return (
     <StaticQuery
       query={graphql`
-        query ConfirmedCandidates {
-          allCandidatesYaml(filter: {status: {eq: "confirmed"}}, sort: {fields: name}) {
+        query WithdrawnCandidates {
+          allCandidatesYaml(filter: {status: {eq: "withdrawn"}}, sort: {fields: name}) {
             nodes {
               name
               short_name
@@ -33,7 +33,7 @@ export default (props) => {
           status={props.transitionStatus}
           candidates={data.allCandidatesYaml.nodes}
           news={data.allNewsYaml.nodes}
-          title="YC122 Elections - Confirmed Candidates"
+          title="YC122 Elections - Withdrawn Candidates"
         />
       )}
     />

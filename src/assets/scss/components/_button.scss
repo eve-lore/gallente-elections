@@ -27,7 +27,7 @@ input[type="submit"], input[type="reset"], input[type="button"], button, .button
         transform: skew(20deg);
     }
 
-    &:hover,
+    
     &:active,
     &.active {
         background-color: _palette(button-hover);
@@ -44,4 +44,13 @@ input[type="submit"], input[type="reset"], input[type="button"], button, .button
 
 input[type="submit"], input[type="reset"], input[type="button"], button {
     line-height: calc(#{_size(element-height)} - 2px);
+}
+
+@media (hover: hover) {
+    input[type="submit"], input[type="reset"], input[type="button"], button, .button {
+        &:hover {
+            background-color: _palette(button-hover);
+            color: _palette(button-hover-fg);
+        }
+    }
 }

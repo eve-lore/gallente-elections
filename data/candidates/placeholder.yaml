@@ -1,5 +1,5 @@
 # The filename must end with '.yaml', but is otherwise not important.
-status: "placeholder" # status: "active"  will make sure this item is used in the listing
+status: "placeholder" # specifies the listing to use, can be any of the following: "confirmed", "capsuleer", "speculated", "withdrawn"
 name: placeholder # The full display name
 short_name: placeholder # The button display name
 character_id: 0 # The character ID to use (for the image server)

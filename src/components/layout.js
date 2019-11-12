@@ -26,7 +26,7 @@ const Layout = (props) => {
           ]}>
           <html lang="en" />
         </Helmet>
-        <div className={`body ${props.loading ? 'is-loading': 'is-ready'}`} id="body-wrapper">
+        <div className={`body base-${props.base ? 'skip' : 'do'} ui-${props.ui ? 'show' : 'hide'} content-${props.content ? 'show' : 'hide'} ${props.fading ? 'fading' : ''}`} id="body-wrapper">
           <div id="body" className="body">
           {props.children}
           </div>
@@ -40,6 +40,10 @@ const Layout = (props) => {
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
   timeout: PropTypes.bool,
+  base: PropTypes.bool,
+  ui: PropTypes.bool,
+  content: PropTypes.bool,
+  fading: PropTypes.bool,
 }
 
 export default Layout
