@@ -3,7 +3,6 @@ import { StaticQuery, graphql } from 'gatsby'
 import CandidatePage from '../components/CandidatePage'
 
 export default (props) => {
-  console.log(props.path, props.transitionStatus, props);
   return (
     <StaticQuery
       query={graphql`

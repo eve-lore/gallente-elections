@@ -13,7 +13,6 @@ import Carousel from 'nuka-carousel';
 
 class CandidatePage extends React.Component {
   constructor(props) {
-    console.log(props)
     super(props)
     this.state = Object.assign({
       base: false,
@@ -22,13 +21,11 @@ class CandidatePage extends React.Component {
     }, props.state, {
       fading: false,
     })
-    console.log(this.state)
     
     this.transitionOut = this.transitionOut.bind(this);
   }
   
   transitionOut(exit, node) {
-    console.log("transitionOut");
     this.setState({
       ui: true,
       content: false,
