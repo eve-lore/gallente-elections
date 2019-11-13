@@ -1,7 +1,7 @@
 # The filename must end with '.yaml', but is otherwise not important.
 status: "placeholder" # specifies the listing to use, can be any of the following: "confirmed", "capsuleer", "speculated", "withdrawn"
 name: placeholder # The full display name
-short_name: placeholder # The button display name
+short_name: placeholder # A shorter name (to more easily assign news.)
 character_id: 0 # The character ID to use (for the image server)
 description: "" # The dossier entry. Will be treated as Markdown content.
 

@@ -23,16 +23,24 @@ $font: (
 
 // Palette.
 $palette: (
-    bg:							#1d2222,
-    bg-alt:						#000000,
-    bg-overlay:					rgba(19,21,25,0.5),
+    bg:							rgb(20,20,20),
+    bg-alt:						rgb(20,20,20),
     fg:							#ffffff,
     fg-bold:					#ffffff,
-    fg-light:					rgba(255,255,255,0.5),
     border:						#ffffff,
-    border-bg:					rgba(255,255,255,0.275),
+    border-bg:					rgba(255,255,255,0.25),
     border-bg-alt:				rgba(255,255,255,0.5),
     button-border:              rgba(255,255,255,0.5),
     button-hover:               rgba(255,255,255,0.5),
     button-hover-fg:            rgba(10,10,10,0.75)
+);
+
+// UI Colors
+$ui: (
+    base:                       rgb(200,200,200),
+    side-lines:                 rgb(100,100,100),
+    side-lines-inside:          rgb(100,100,100),
+    dark:                       rgb(50,50,50),
+    black:                      rgb(0,0,0),
+    white:                      rgb(255,255,255),
 );

@@ -1,4 +1,5 @@
 <svg version="1.1"
+     class="ui"
      baseProfile="full"
      viewBox="0 0 2560 250"
      preserveAspectRatio="none"
@@ -14,15 +15,15 @@
             <rect width="100%" height="100%" fill="url(#h-top-gradient)"/>
         </mask>
     </defs>
-    <line class="h-bar h-bar-1" x1="0" y1="1px" x2="2560" y2="1px" stroke-width="2px" stroke="rgba(250,250,250,0.3)" />
-    <rect id="h-top-filler" x="0" y="2px" width="2560" height="20px" stroke-width="0" stroke="transparent" fill="rgba(50,50,50,0.4)" mask="url(#h-top-bar-fade)" />
-    <line class="h-bar h-bar-2" x1="0" y1="22px" x2="2560" y2="22px" stroke-width="2px" stroke="rgba(250,250,250,0.3)" />
+    <line class="h-bar h-bar-1" x1="0" y1="1px" x2="2560" y2="1px" stroke-width="2px" class="s-white s-25" />
+    <rect id="h-top-filler" x="0" y="2px" width="2560" height="20px" stroke-width="0" stroke="transparent" class="f-dark f-50" mask="url(#h-top-bar-fade)" />
+    <line class="h-bar h-bar-2" x1="0" y1="22px" x2="2560" y2="22px" stroke-width="2px" class="s-white s-25" />
 
-    <path id="h-top-bar" d="M0,200 C640,240 1920,240 2560,200" stroke-width="6px" stroke="rgba(200,200,200,0.25)" fill="transparent" mask="url(#h-top-bar-fade)"/>
+    <path id="h-top-bar" d="M0,200 C640,240 1920,240 2560,200" stroke-width="6px" class="s-base s-25" fill="transparent" mask="url(#h-top-bar-fade)"/>
 
-    <path id="h-panel" d="M1280,40 L2360,40 L2400,120 L2360,180 C1920,230 640,230 200,180 L160,120 L200,40 Z" fill="rgba(0,0,0,0.4)" stroke-width="4px" stroke="rgba(200,200,200,0.3)" />
-    <path class="side-lines" d="M210,40 L170,120 L210,180" fill="transparent" stroke-width="2px" stroke="rgba(200,200,200,0.5)" />
-    <path class="side-lines" d="M370,40 L330,125 L370,195" fill="transparent" stroke-width="2px" stroke="rgba(200,200,200,0.5)" />
-    <path class="side-lines" d="M2350,40 L2390,120 L2350,180" fill="transparent" stroke-width="2px" stroke="rgba(200,200,200,0.5)" />
-    <path class="side-lines" d="M2190,40 L2230,125 L2190,195" fill="transparent" stroke-width="2px" stroke="rgba(200,200,200,0.5)" />
+    <path id="h-panel" d="M1280,40 L2360,40 L2400,120 L2360,180 C1920,230 640,230 200,180 L160,120 L200,40 Z" class="f-black f-50 s-base s-25" stroke-width="4px" />
+    <path class="s-50 s-side-lines side-lines" d="M210,40 L170,120 L210,180" fill="transparent" stroke-width="2px"/>
+    <path class="s-50 s-side-lines-inside side-lines" d="M370,40 L330,125 L370,195" fill="transparent" stroke-width="2px"/>
+    <path class="s-50 s-side-lines-inside side-lines" d="M2350,40 L2390,120 L2350,180" fill="transparent" stroke-width="2px"/>
+    <path class="s-50 s-side-lines side-lines" d="M2190,40 L2230,125 L2190,195" fill="transparent" stroke-width="2px"/>
 </svg>

@@ -1,5 +1,7 @@
 @import 'base/vars';
 
+@import 'theme/gallente';
+
 @import 'lib/functions';
 @import 'lib/skel';
 
@@ -22,6 +24,7 @@
 
 @import 'base/page';
 @import 'base/typography';
+@import 'base/ui';
 
 @import 'components/button';
 @import 'components/carousel';

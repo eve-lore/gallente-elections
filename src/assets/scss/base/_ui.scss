@@ -1,0 +1,21 @@
+.ui {
+    @each $name, $val in $ui {
+        .f-#{$name} {
+            fill: $val;
+        }
+        .s-#{$name} {
+            stroke: $val;
+        }
+    }
+
+    @for $i from 0 through 4 {
+        &.f-#{($i * 25)},
+        .f-#{($i * 25)} {
+            fill-opacity: 25% * $i;
+        }
+        &.s-#{($i * 25)},
+        .s-#{($i * 25)} {
+            stroke-opacity: 25% * $i;
+        }
+    }
+}

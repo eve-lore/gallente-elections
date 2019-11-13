@@ -1,4 +1,4 @@
-// Credits to html5up for these helpers.
+// Credits to html5up for these helpers. Adjusted with some of our own.
 
 /// Gets a font value.
 /// @param {string} $keys Key(s).
@@ -19,4 +19,19 @@
 /// @return {string} Value.
 @function _size($keys...) {
 	@return val($size, $keys...);
+}
+
+/// Gets a UI value..
+/// @param {string} $keys Key(s).
+/// @return {string} Value.
+@function _size($keys...) {
+	@return val($size, $keys...);
+}
+
+/// Configures a background-image if set.
+@mixin _background_image() {
+	$background-image: false !default;
+	@if ($background-image) {
+		background-image: url($background-image);
+	}
 }
