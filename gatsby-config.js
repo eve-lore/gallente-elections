@@ -39,55 +39,5 @@ module.exports = {
         host: process.env.CF_HOST,
       }
     },
-    {
-      resolve: `gatsby-plugin-feed`,
-      options: {
-        query: `
-          {
-            site {
-              siteMetadata {
-                title
-                description
-                siteUrl
-                site_url: siteUrl
-              }
-            }
-          }
-        `,
-        feeds: [
-          {
-            query: `
-              {
-                allContentfulGallenteElectionsNews(filter: {url: {ne: ""}}, sort: {fields: updated, order: DESC}, limit: 25) {
-                  nodes {
-                    id
-                    url
-                    title
-                    candidates {
-                      name
-                    }
-                    updated
-                  }
-                }
-              }
-            `,
-            serialize: ({query: {site, allContentfulGallenteElectionsNews} }) => {
-              return allContentfulGallenteElectionsNews.nodes.map(node => {
-                return Object.assign({}, {
-                  title: node.title,
-                  description: node.title,
-                  date: node.updated,
-                  url: node.url,
-                  guid: node.url,
-                  categories: node.candidates.map(x => x.name),
-                })
-              })
-            },
-            output: "/news.xml",
-            title: "Federation Elections News Feed"
-          }
-        ]
-      }
-    },
   ],
 }
