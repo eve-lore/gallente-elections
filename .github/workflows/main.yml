@@ -1,0 +1,42 @@
+name: build website
+on:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: '0 */3 * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+
+      - name: Build
+        run: |
+          npm install
+          npm run-script build
+        env:
+          CF_HOST: ${{ secrets.CF_HOST }}
+          CF_ACCESS_TOKEN: ${{ secrets.CF_ACCESS_TOKEN }}
+          CF_SPACE_ID: ${{ secrets.CF_SPACE_ID }}
+          GATSBY_TELEMETRY_DISABLED: 1 # Don't let gatsby phone home.
+
+      - name: Push
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          #GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ACCESS_TOKEN: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          BASE_BRANCH: master
+          BRANCH: gh-pages
+          FOLDER: public
+        env:
+          GIT_COMMITTER_NAME: "Fedo"
+          GIT_AUTHOR_NAME: "Fedo"
+          GIT_COMMITTER_EMAIL: "fedo@fedo.fedo"
+          GIT_AUTHOR_EMAIL: "fedo@fedo.fedo"
