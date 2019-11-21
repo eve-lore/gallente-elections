@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import TransitionLink from "gatsby-plugin-transition-link"
 
 import Layout from './layout'
 import Header from './Header'
@@ -64,7 +63,7 @@ class CandidatePage extends React.Component {
               transitionMode="scroll"
             >
             {this.props.candidates.map((node, index) => (
-              <Candidate candidate={node} active={this.state.slideIndex === index} news={this.props.news}/>
+              <Candidate key={node.id} candidate={node} active={this.state.slideIndex === index} news={this.props.news}/>
             ))}
           </Carousel>
         </div>

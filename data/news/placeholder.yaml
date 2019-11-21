@@ -1,7 +1,0 @@
-# The filename must end with '.yaml', but is otherwise not important.
-url: "" # The url of the news post. If this is not-empty, it will be included in the listing
-title: "The title of the news post"
-date: "YC121.11.11" #YC-friendly date
-updated: "2019-11-11T11:00:00Z" # Javascript-friendly datetime stamp: [YYYY]-[MM]-[DD]T[HH]:[mm]:[ss]Z . Note the fixed "T" and "Z".
-candidates:
-  - Name of candidate # Can be multiple candidates, can also be none, if so, specify "candidates: []" . Make sure to prefix each line with a -

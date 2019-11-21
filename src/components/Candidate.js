@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Markdown from 'react-markdown'
+import NewsList from './NewsList'
 
 
 const Candidate = ({candidate, active, news}) => (
@@ -12,7 +13,7 @@ const Candidate = ({candidate, active, news}) => (
                 </div>
                 <div className="data">
                     <div className="portrait">
-                        <img src={`https://images.evetech.net/characters/${candidate.character_id ? candidate.character_id : 1}/portrait`} alt={candidate.name}></img>
+                        <img src={`https://images.evetech.net/characters/${candidate.characterId ? candidate.characterId : 1}/portrait`} alt={candidate.name}></img>
                     </div>
                     <div className="name">
                         <h2>{candidate.name}</h2>
@@ -23,17 +24,13 @@ const Candidate = ({candidate, active, news}) => (
                 <div className="dossier">
                     <h3>Dossier</h3>
                     <div>
-                        <Markdown source={candidate.description} />
+                        <Markdown source={candidate.description ? candidate.description.description : ``} />
                     </div>
                 </div>
                 <div className="recent">
                     <h3>Recent News</h3>
                     <div>
-                        <ul>
-                            {news.filter(({candidates}) => candidates.some(name => (name === candidate.name) || (name === candidate.short_name))).map((item) => (
-                            <li><span className="date">{item.date}</span><span className="item"><a href={item.url}>{item.title}</a></span></li>
-                            ))}
-                        </ul>
+                        <NewsList news={news} candidate={candidate} />
                     </div>
                 </div>
             </div>

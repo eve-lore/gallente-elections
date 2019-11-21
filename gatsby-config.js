@@ -22,12 +22,6 @@ module.exports = {
     },
     `gatsby-transformer-yaml`,
     {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `data/`,
-      },
-    },
-    {
       resolve: 'gatsby-plugin-react-svg',
       options: {
         rule: {
@@ -37,7 +31,14 @@ module.exports = {
     },
     `gatsby-plugin-transition-link`,
     'gatsby-plugin-sass',
-    //'gatsby-plugin-offline',
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: process.env.CF_SPACE_ID,
+        accessToken: process.env.CF_ACCESS_TOKEN,
+        host: process.env.CF_HOST,
+      }
+    },
     {
       resolve: `gatsby-plugin-feed`,
       options: {
@@ -57,25 +58,28 @@ module.exports = {
           {
             query: `
               {
-                allNewsYaml(sort: {fields: updated}, filter: {url: {ne: ""}}) {
+                allContentfulGallenteElectionsNews(filter: {url: {ne: ""}}, sort: {fields: updated, order: DESC}, limit: 25) {
                   nodes {
+                    id
                     url
                     title
+                    candidates {
+                      name
+                    }
                     updated
-                    candidates
                   }
                 }
               }
             `,
-            serialize: ({query: {site, allNewsYaml} }) => {
-              return allNewsYaml.nodes.map(node => {
+            serialize: ({query: {site, allContentfulGallenteElectionsNews} }) => {
+              return allContentfulGallenteElectionsNews.nodes.map(node => {
                 return Object.assign({}, {
                   title: node.title,
                   description: node.title,
                   date: node.updated,
                   url: node.url,
                   guid: node.url,
-                  categories: node.candidates
+                  categories: node.candidates.map(x => x.name),
                 })
               })
             },
@@ -84,6 +88,6 @@ module.exports = {
           }
         ]
       }
-    }
+    },
   ],
 }

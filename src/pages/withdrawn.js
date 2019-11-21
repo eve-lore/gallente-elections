@@ -7,20 +7,26 @@ export default (props) => {
     <StaticQuery
       query={graphql`
         query WithdrawnCandidates {
-          allCandidatesYaml(filter: {status: {eq: "withdrawn"}}, sort: {fields: name}) {
+          allContentfulGallenteElectionsCandidate(filter: {status: {eq: "withdrawn"}}, sort: {fields: name}) {
             nodes {
+              id
               name
-              short_name
-              character_id
-              description
+              status
+              characterId
+              description {
+                description
+              }
             }
           }
-          allNewsYaml(sort: {fields: updated}, filter: {url: {ne: ""}}) {
+          allContentfulGallenteElectionsNews(filter: {url: {ne: ""}}, sort: {fields: updated, order: DESC}) {
             nodes {
+              id
               url
               title
-              date
-              candidates
+              candidates {
+                name
+              }
+              updated
             }
           }
         }
@@ -30,8 +36,8 @@ export default (props) => {
           state={props.exit.state}
           location={props.location}
           status={props.transitionStatus}
-          candidates={data.allCandidatesYaml.nodes}
-          news={data.allNewsYaml.nodes}
+          candidates={data.allContentfulGallenteElectionsCandidate.nodes}
+          news={data.allContentfulGallenteElectionsNews.nodes}
           title="YC122 Elections - Withdrawn Candidates"
         />
       )}
