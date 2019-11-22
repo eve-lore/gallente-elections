@@ -39,7 +39,8 @@ a {
     background-repeat: no-repeat;
     background-size: 0% 2px;
 
-    &.button {
+    &.button,
+    &.no-animate {
         background-image: none;
         background-position: initial;
         background-size: initial;

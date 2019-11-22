@@ -63,7 +63,7 @@ class CandidatePage extends React.Component {
               transitionMode="scroll"
             >
             {this.props.candidates.map((node, index) => (
-              <Candidate key={node.id} candidate={node} active={this.state.slideIndex === index} news={this.props.news}/>
+              <Candidate key={node.id} candidate={node} active={this.state.slideIndex === index} news={this.props.news} location={this.props.location}/>
             ))}
           </Carousel>
         </div>

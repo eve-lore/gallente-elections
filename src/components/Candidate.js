@@ -4,7 +4,9 @@ import Markdown from 'react-markdown'
 import NewsList from './NewsList'
 
 
-const Candidate = ({candidate, active, news}) => (
+import Twitter from '../images/Twitter_Logo_Blue.svg';
+
+const Candidate = ({location, candidate, active, news}) => (
     <div className={`candidate ${active ? 'active': '' }`}>
         <div className="wrapper">
             <div className="intro">
@@ -14,6 +16,11 @@ const Candidate = ({candidate, active, news}) => (
                 <div className="data">
                     <div className="portrait">
                         <img src={`https://images.evetech.net/characters/${candidate.characterId ? candidate.characterId : 1}/portrait`} alt={candidate.name}></img>
+                        <div className="tweet">
+                            <a className="no-animate" href={`https://twitter.com/intent/tweet?text=I Support ${candidate.name} in the YC122 Elections! %0A%0A %23TweetFleet %23EVEOnline %23GallenteElections %23TheLoreYouKnow%0A&url=${location.href.split(/[?#]/)[0]}`}>
+                                <Twitter/>
+                            </a>
+                        </div>
                     </div>
                     <div className="name">
                         <h2>{candidate.name}</h2>
@@ -39,6 +46,7 @@ const Candidate = ({candidate, active, news}) => (
 )
 
 Candidate.propTypes = {
+    location: PropTypes.object,
     candiate: PropTypes.object.isRequired,
     active: PropTypes.bool.isRequired,
     news: PropTypes.array.isRequired,
