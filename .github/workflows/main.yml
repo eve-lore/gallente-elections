@@ -28,13 +28,14 @@ jobs:
           GATSBY_TELEMETRY_DISABLED: 1 # Don't let gatsby phone home.
 
       - name: Push
-        uses: JamesIves/github-pages-deploy-action@releases/v3
+        uses: JamesIves/github-pages-deploy-action@releases/v3-test
         with:
           #GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ACCESS_TOKEN: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           BASE_BRANCH: master
           BRANCH: gh-pages
           FOLDER: public
+          CLEAN: true
         env:
           GIT_COMMITTER_NAME: "Fedo"
           GIT_AUTHOR_NAME: "Fedo"
