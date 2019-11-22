@@ -28,7 +28,7 @@ jobs:
           GATSBY_TELEMETRY_DISABLED: 1 # Don't let gatsby phone home.
 
       - name: Push
-        uses: JamesIves/github-pages-deploy-action@releases/v3-test
+        uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
           #GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ACCESS_TOKEN: ${{ secrets.ACTIONS_DEPLOY_KEY }}
