@@ -15,6 +15,7 @@
     "gatsby-source-contentful": "^2.1.66",
     "gatsby-source-filesystem": "^2.1.40",
     "gatsby-transformer-yaml": "^2.2.18",
+    "core-js-compat": "3.4.5",
     "gh-pages": "^2.1.1",
     "moment": "^2.24.0",
     "node-sass": "^4.12.0",
