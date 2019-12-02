@@ -18,17 +18,6 @@ export default (props) => {
               }
             }
           }
-          allContentfulGallenteElectionsNews(filter: {url: {ne: ""}}, sort: {fields: updated, order: DESC}) {
-            nodes {
-              id
-              url
-              title
-              candidates {
-                name
-              }
-              updated
-            }
-          }
         }
       `}
       render={data => (
@@ -37,7 +26,6 @@ export default (props) => {
           location={props.location}
           status={props.transitionStatus}
           candidates={data.allContentfulGallenteElectionsCandidate.nodes}
-          news={data.allContentfulGallenteElectionsNews.nodes}
           title="YC122 Elections - Withdrawn Candidates"
         />
       )}

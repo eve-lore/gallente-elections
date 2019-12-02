@@ -3,20 +3,12 @@ import PropTypes from 'prop-types'
 
 import moment from 'moment'
 
-class YCDate extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            raw: moment(props.date),
-            yc: moment(props.date).subtract(1907, 'years'),
-        }
-    }
+const YCDate = (props) => {
+    const yc = moment(props.date).subtract(1898, 'years')
 
-    render() {
-        return (
-            <span className="date">{this.state.yc.format("[YC]Y.MM.DD")}</span>
-        )
-    }
+    return (
+        <span className="date">{yc.format("[YC]Y.MM.DD")}</span>
+    )
 }
 
 YCDate.propTypes = {
