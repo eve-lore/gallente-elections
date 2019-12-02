@@ -28,6 +28,13 @@ jobs:
           CF_SPACE_ID: ${{ secrets.CF_SPACE_ID }}
           GATSBY_TELEMETRY_DISABLED: 1 # Don't let gatsby phone home.
 
+      - name: Gather failure logs
+        if: failure()
+        uses: actions/upload-artifact@v1
+        with:
+          name: "npm logs"
+          path: "/home/runner/.npm/_logs/"
+
       - name: Push
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
