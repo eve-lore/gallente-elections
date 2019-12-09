@@ -7,7 +7,7 @@ export default (props) => {
     <StaticQuery
       query={graphql`
         query ConfirmedCandidates {
-          allContentfulGallenteElectionsCandidate(filter: {status: {eq: "confirmed"}}, sort: {fields: name}) {
+          allContentfulGallenteElectionCandidate(filter: {status: {eq: "confirmed"}}, sort: {fields: name}) {
             nodes {
               id
               name
@@ -25,7 +25,7 @@ export default (props) => {
           state={props.exit.state}
           location={props.location}
           status={props.transitionStatus}
-          candidates={data.allContentfulGallenteElectionsCandidate.nodes}
+          candidates={data.allContentfulGallenteElectionCandidate.nodes}
           title="YC122 Elections - Confirmed Candidates"
         />
       )}

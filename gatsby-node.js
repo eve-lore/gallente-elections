@@ -18,22 +18,22 @@ exports.sourceNodes = ({ actions }) => {
     // Pre-define node types so having no content won't break things.
     const { createTypes } = actions
     const typeDefs = `
-        type ContentfulGallenteElectionsCandidate implements Node {
+        type ContentfulGallenteElectionCandidate implements Node {
             name: String
             status: String
             characterId: Int
-            gallente_elections_news: [ContentfulGallenteElectionsNews] @link(by: "id", from: "gallente elections news___NODE") @proxy(from: "gallente elections news___NODE")
-            description: contentfulGallenteElectionsCandidateDescriptionTextNode @link(by: "id", from: "description___NODE")
+            gallente_elections_news: [ContentfulGallenteElectionNews] @link(by: "id", from: "gallente elections news___NODE") @proxy(from: "gallente elections news___NODE")
+            description: contentfulGallenteElectionCandidateDescriptionTextNode @link(by: "id", from: "description___NODE")
         }
         
-        type ContentfulGallenteElectionsNews implements Node {
+        type ContentfulGallenteElectionNews implements Node {
             title: String
             url: String
             updated: Date @dateformat
-            candidates: [ContentfulGallenteElectionsCandidate] @link(by: "id", from: "candidates___NODE")
+            candidates: [ContentfulGallenteElectionCandidate] @link(by: "id", from: "candidates___NODE")
         }
 
-        type contentfulGallenteElectionsCandidateDescriptionTextNode implements Node {
+        type contentfulGallenteElectionCandidateDescriptionTextNode implements Node {
             description: String
         }
 

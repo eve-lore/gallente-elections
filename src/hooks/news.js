@@ -1,10 +1,10 @@
 import { useStaticQuery, graphql } from "gatsby"
 
 export const useNews = () => {
-    const { allContentfulGallenteElectionsNews } = useStaticQuery(
+    const { allContentfulGallenteElectionNews } = useStaticQuery(
         graphql`
         query AllNews {
-            allContentfulGallenteElectionsNews(filter: {url: {ne: ""}}, sort: {fields: updated, order: DESC}) {
+            allContentfulGallenteElectionNews(filter: {url: {ne: ""}}, sort: {fields: updated, order: DESC}) {
                 nodes {
                   id
                   url
@@ -18,5 +18,5 @@ export const useNews = () => {
         }
         `
     )
-    return allContentfulGallenteElectionsNews.nodes
+    return allContentfulGallenteElectionNews.nodes
 }
