@@ -19,9 +19,9 @@ jobs:
 
       - name: Build
         run: |
-          npm install
-          npm run-script clean
-          npm run-script build
+          yarn install
+          yarn clean
+          yarn build
         env:
           CF_HOST: ${{ secrets.CF_HOST }}
           CF_ACCESS_TOKEN: ${{ secrets.CF_ACCESS_TOKEN }}
