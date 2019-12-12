@@ -26,7 +26,7 @@ export default (props) => {
           location={props.location}
           status={props.transitionStatus}
           candidates={data.allContentfulGallenteElectionCandidate.nodes}
-          title="YC122 Elections - Confirmed Candidates"
+          title="Confirmed Candidates"
         />
       )}
     />

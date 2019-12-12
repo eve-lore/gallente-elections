@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Helmet from 'react-helmet'
 
 import Layout from './layout'
 import Header from './Header'
@@ -48,8 +49,12 @@ class CandidatePage extends React.Component {
   
   render() {
     return (
-      <Layout fading={this.state.fading} base={this.state.base} ui={this.state.ui} content={this.state.content}>
-        <Header><h2 className="align-center">{this.props.title}</h2></Header>
+      <Layout fading={this.state.fading} base={this.state.base} ui={this.state.ui} content={this.state.content} location={this.props.location}>
+        <Helmet>
+          <title>{this.props.title}</title>
+          <meta name="og:title" content={`YC122 Elections${this.props.title ? ' - ' : ''}${this.props.title}`}/>
+        </Helmet>
+        <Header><h2 className="align-center">YC122 Elections{this.props.title ? ' - ' : ''}{this.props.title}</h2></Header>
         <div className="main" id="main">
           <Carousel
               autoplay={false}

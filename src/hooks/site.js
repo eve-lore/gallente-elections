@@ -10,6 +10,7 @@ export const useSite = () => {
                     title
                     siteUrl
                     description
+                    twitter
                 }
             }
         }

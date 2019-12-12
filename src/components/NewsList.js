@@ -12,7 +12,7 @@ const NewsList = (props) => {
 
     return (
         <ul>
-        {news.filter(({candidates}) => candidates.some(({name}) => (name === candidate.name) )).map((item) => (
+        {news.filter(({candidates}) => candidates !== null ? candidates.some(({name}) => (name === candidate.name) ) : []).map((item) => (
             <NewsItem key={item.id} item={item}/>
         ))}
         </ul>

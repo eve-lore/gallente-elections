@@ -2,9 +2,10 @@ module.exports = {
   pathPrefix: "/gallente-elections",
   siteMetadata: {
     siteUrl: `https://eve-lore.github.io`,
-    title: "Gallente Federation Elections",
+    title: "YC122 Elections",
     author: "ISD Thalack Dalhar",
-    description: ""
+    description: "Candidate information for the upcoming YC122 Gallente Elections",
+    twitter: "@ISD_Thalack",
   },
   plugins: [
     'gatsby-plugin-react-helmet',
