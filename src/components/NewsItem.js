@@ -12,7 +12,7 @@ class NewsItem extends React.Component {
         return (
             <li>
                 <YCDate date={this.state.updated}/>
-                <span className="item"><a href={this.state.url}>{this.state.title}</a></span>
+                <span className="item"><a href={this.state.url} target="_blank" rel="noopener noreferrer">{this.state.title}</a></span>
             </li>
         )
     }
