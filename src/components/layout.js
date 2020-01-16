@@ -7,7 +7,7 @@ import '../assets/scss/main.scss'
 import icon from "../images/gallente.png"
 
 const Layout = (props) => {
-  const { pathPrefix, siteMetadata } = useSite()
+  const { siteMetadata } = useSite()
   const { location } = props
   return (
     <>

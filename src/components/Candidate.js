@@ -23,7 +23,7 @@ const Candidate = (props) => {
                         <div className="portrait">
                             <img src={`https://images.evetech.net/characters/${charId}/portrait`} alt={candidate.name}></img>
                             <div className="tweet">
-                                <a className="no-animate" href={`https://twitter.com/intent/tweet?text=I Support ${candidate.name} in the YC122 Elections! %0A%0A %23TweetFleet %23EVEOnline %23GallenteElections %23TheLoreYouKnow%0A&url=${siteMetadata.siteUrl}${pathPrefix}${location.pathname}`}>
+                                <a className="no-animate" target="_blank" rel="noopener noreferrer" href={`https://twitter.com/intent/tweet?text=I Support ${candidate.name} in the YC122 Elections! %0A%0A %23TweetFleet %23EVEOnline %23GallenteElections %23TheLoreYouKnow%0A&url=${siteMetadata.siteUrl}${pathPrefix}${location.pathname}`}>
                                     <Twitter/>
                                 </a>
                             </div>

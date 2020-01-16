@@ -80,13 +80,13 @@ class CandidatePage extends React.Component {
               duration={1}
               state={{base: true, ui: true, content: false}}
             >Confirmed</Link>
-          <Link
+          {/* <Link
               className="button"
               to="/speculated"
               trigger={this.transitionOut}
               duration={1}
               state={{base: true, ui: true, content: false}}
-            >Speculated</Link>
+            >Speculated</Link> */}
           <Link
               className="button"
               to="/withdrawn"
